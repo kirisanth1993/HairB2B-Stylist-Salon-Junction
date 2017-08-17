@@ -1,0 +1,294 @@
+<html lang="en" ng-app="app" ><head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hair B2B</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script> --><!-- load angular -->
+    <script src="angular.js"> </script> 
+    <script src="sign.js"> </script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/homepage.css" rel="stylesheet">
+	
+	<link href="css/signup.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-controller="signupController">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> 
+        <div class="container">
+			
+	
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+				
+                <a class="navbar-brand" href="#">Calendar</a>
+				<a class="navbar-brand" href="#">Orders</a>
+				<a class="navbar-brand" href="#">History</a>
+				<a class="navbar-brand" href="#">Other</a>
+				
+				
+            </div>
+			<div>
+			<a style="float:right;" class="navbar-brand" href="#">Logout</a>
+			</div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            
+            <!-- /.navbar-collapse -->
+        
+        <!-- /.container -->
+    </nav>
+			
+			<div class="row">
+            <div class="col-md-3 col-3 col-sm-3 col-xl-3">
+                <p class="lead">Hair B2B</p>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">Category 1</a>
+                    <a href="#" class="list-group-item">Category 2</a>
+                    <a href="#" class="list-group-item">Category 3</a>
+                </div>
+            </div>
+            
+        		
+			
+	
+	
+	
+			<div class="col-9 col-md-9 col-sm-9 col-xl-9">
+            <form style="float:left;" class="form-horizontal" role="form">
+                <h2>Registration Form</h2>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="Enter your First Name" class="form-control" required autofocus>
+                     </div>
+                </div>
+				
+				<div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Last Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="lastName" placeholder="Enter Your Last Name" class="form-control" required autofocus>
+                     </div>
+                </div>
+				
+				<div class="form-group">
+                    <label for="age" class="col-sm-3 control-label">Age</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="age" placeholder="Enter Your Age" class="form-control" required autofocus>
+                     </div>
+                </div>
+				
+				<div class="form-group">
+                    <label for="location" class="col-sm-3 control-label">Location</label>
+                    <div class="col-sm-9">
+                        <select id="location" class="form-control">
+                            <option>Afghanistan</option>
+                            <option>Bahamas</option>
+                            <option>Cambodia</option>
+                            <option>Denmark</option>
+                            <option>Ecuador</option>
+                            <option>Fiji</option>
+                            <option>Gabon</option>
+                            <option>Haiti</option>
+                        </select>
+                    </div>
+                </div> <!-- /.form-group -->
+				
+				<div class="form-group">
+                    <label class="control-label col-sm-3">Gender</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="femaleRadio" value="Female">Female
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="maleRadio" value="Male">Male
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="otherRadio" value="Other">Other
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /.form-group -->
+				
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" placeholder="Email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="password" placeholder="Re-Enter Password" class="form-control">
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">RE-Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="repassword" placeholder="RE-Enter Your Password" class="form-control">
+                    </div>
+                </div>
+				                               
+                <button ng-click="save()">
+                    ssss
+                </button>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">User Type</label>
+                    <div class="col-sm-9">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="salon" ng-click="save(0)" value="salon">Salon
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="salon" ng-click="save(1)" value="stylist">Stylist
+                            </label>
+                        </div>
+                    </div>			
+				</div> <!-- /.form-group -->
+				
+				<div class="form-group" ng-if="stylistShow==true">
+                    <label for="description" class="col-sm-3 control-label">Description</label>
+                    
+                    <div class="col-sm-9">
+						<textarea rows="3" cols="50">
+						 
+						</textarea>
+					</div>
+                </div>
+				
+				<div class="form-group" ng-if="stylistShow==true">
+                    <label for="conditions" class="col-sm-3 control-label">Conditions</label>
+                    <div class="col-sm-9">
+						<textarea rows="3" cols="50">
+						 
+						</textarea>
+					</div>
+                </div>
+				
+				<div class="form-group" ng-if="salonShow==true">
+                    <label for="salonName" class="col-sm-3 control-label">Salon Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="salonName" placeholder="Enter Your Salon Name" class="form-control" required autofocus>
+                     </div>
+                </div>
+				
+				
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">I accept <a href="#">terms</a>
+                            </label>
+                        </div>
+                    </div>
+                </div> <!-- /.form-group -->
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </div>
+                </div>
+            </form> <!-- /form -->
+        
+			</div>
+			</div>
+	
+	
+	
+	
+	
+	
+	
+
+    <!-- Page Content -->
+    
+        
+    
+    
+        <hr>
+        <!-- Footer -->
+		
+				
+        <footer>
+		<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation"> 
+        
+            <!-- Brand and toggle get grouped for better mobile display -->
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About US</a>
+                    </li>
+					
+					<li>
+                        <a href="#">Contact us</a>
+                    </li>
+					
+                    <li>
+                        <a href="#">Help</a>
+                    </li>
+					
+					<li>
+                        <a href="#">FAQ</a>
+                    </li>
+					
+					<li>
+                        <a href="#">Terms and Conditions</a>
+                    </li>
+					
+					<li>
+                        <a href="#">Download App</a>
+                    </li>
+					
+					<li>
+                        <a href="#">Share</a>
+                    </li>
+					
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        
+    </nav>
+    	
+            
+        </footer>
+    </div>
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
