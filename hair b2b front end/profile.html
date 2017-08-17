@@ -1,0 +1,156 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 toppad" >
+    <div class = "panel panel-info">
+      <div class="panel-heading">
+        <h3 id  class="panel-title">Hi {{userObj.firstName}} {{userObj.lastName}} !</h3>
+      </div>
+
+      <div class="panel-body">
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="active"><a href="#">{{userObj.firstName}}</a></li>
+          <li role="presentation"><a href="#!/profile">Calendar</a></li>
+          <li role="presentation"><a href="#!/profile">Edit My Page</a></li>
+        </ul>
+
+        <div class="row">
+          <div style="margin-top:20px;" class="col-md-4" >
+            <center>
+              <img class="col-md-10 col-md-offset-1" alt="User Pic" src="../boy-512.png" class="img-responsive">
+              <div class="col-md-10 col-md-offset-1" style="text-align:center;"><h2>{{userObj.firstName}} {{userObj.lastName}}</h2></div>
+            </center>
+            <div ng-if="stylist" class ="rating col-md-12">
+              <center>
+                <h2 class = "col-md-4 col-md-offset-2">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </h2>
+                <div class = "col-md-2 col-md-offset-2">
+                  <h2>4.0</h2>
+                </div>
+              </center>
+            </div>
+            <br>
+
+            <div class="col-md-3 col-md-offset-1" ng-if="stylist" ng-repeat="jobType in jobTypeAndPriceArray"><h4>{{jobType.price}}$ <br> {{jobType.jobType}} </h4></div>
+            <br>
+          </div>
+
+
+          <div class=" col-md-8 col-lg-8 ">
+            <div class ="row">
+              <label class="col-md-4 col-md-offset-1"><h4>Location</h4></label>
+              <label class="col-md-4"><h4>{{userObj.location}}</h4></label>
+            </div>
+
+            <div class ="row">
+              <label class="col-md-4 col-md-offset-1"><h4>Contact</h4></label>
+              <label class="col-md-4"><a><h4>{{userObj.email}}</h4></label></a></label>
+            </div>
+
+            <div class ="row">
+              <label class="col-md-4 col-md-offset-1"><h4>Age</h4></label>
+              <label class="col-md-4"><h4>{{userObj.age}} Years old.</h4></label>
+            </div>
+
+            <div class ="row">
+              <label class="col-md-4 col-md-offset-1"><h4>Gender</h4></label>
+              <label class="col-md-4"><h4>{{userObj.gender}}</h4></label>
+            </div>
+
+            <div class ="row">
+              <label class="col-md-4 col-md-offset-1"><h4>User As</h4></label>
+              <label class="col-md-3" ng-repeat="userType in userTypeArray"><h4>{{userType}}
+              </h4></label>
+            </div>
+
+            <br>
+            <br>
+            <div class="row">
+              <div ng-if="stylist" class="col-md-offset-1">
+                <div ng-if="educator" class ="col-md-3">
+                  <table class="table table-user-information" >
+                    <tbody>
+                      <tr>
+                        <td><b>Educator</b></td>
+                      </tr>
+                    </tbody>
+                    <tbody ng-repeat="eduSkill in educatorSkills">
+                      <tr>
+                        <td>{{eduSkill}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div ng-if="hairStylist"  class ="col-md-3">
+                  <table class="table table-user-information" >
+                    <tbody>
+                      <tr>
+                        <td><b>Hair Stylist</b></td>
+                      </tr>
+                    </tbody>
+                    <tbody ng-repeat="hairSkill in hairStylistSkills">
+                      <tr>
+                        <td>{{hairSkill}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div ng-if="apprentice"  class ="col-md-3">
+                  <table class="table table-user-information" >
+                    <tbody>
+                      <tr>
+                        <td><b>Apprentice</b></td>
+                      </tr>
+                    </tbody>
+                    <tbody ng-repeat="appSkill in apprenticeSkills">
+                      <tr>
+                        <td>{{appSkill}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" ng-if="stylist">
+              <div class = "col-md-8 col-md-offset-1">
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <center><h2><lable class="label label-default" style="background-color:green;"><b>Description</b></label></h2></center>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td><center><label><h4>{{stylistObj.description}}</h4></label></center></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="row" ng-if="stylist">
+                <div class = "col-md-8 col-md-offset-1">
+                  <table class="table table-striped" >
+                    <tbody>
+                      <tr>
+                        <center><h2><lable class="label label-default" style="background-color:green;"><b>Conditions</b></label></h2></center>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>
+                          <td><center><label><h4>{{stylistObj.condition}}</h4></label></center></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

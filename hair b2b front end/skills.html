@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="control-group">
+    <br>
+    <div class ="row">
+      <div>
+        <h1 style="font-size: 28px; color:pink; margin-top: -20px; letter-spacing: 1px; line-height: 1; text-align: center;">Set Your Skills and Price</h1>
+        <button type="submit" style="width: 90px; margin-left: 1065px;" class="btn btn-primary btn-block" ng-click="save()">Save Skills</button>
+        <br>
+      </div>
+
+      <div class ="col-md-4">
+        <form class="form-group css-form" role="form3">
+          <input id ="eduId" type="checkbox" name="educator" value = "educator" ng-model = "educator" ng-click = "skillEduClick(1);" >
+          <label for="eduId" class="control control--checkbox"><h3 style="font-size: 28px; margin-top: -35px; letter-spacing: 1px;line-height: 1; text-align: center;">Educator</h3></label>
+
+          <div ng-show = "eduClicked">
+            <div class = "row" style="margin-left:35px; ">
+              <label ><h4>Fix Your Price :- $</h4></label>
+              <input style="margin-left:10px;" type="number" min="0" max="100000" id="eduPrice" ng-model = "eduPrice" name="eduPrice" placeholder="Price"  autofocus required>
+            </div>
+            <span ng-repeat="skill in selectSkills">
+              <div class = "row" style="margin-left:35px; ">
+                <input type="checkbox" id="edu{{skill.id}}" ng-model="eduSelectedList[skill.id]"/>
+                <label class="control control--checkbox" for="edu{{skill.id}}">{{skill.skillName}}</label>
+              </div>
+            </span>
+          </div>
+
+        </form>
+      </div>
+
+
+      <div class ="col-md-4">
+        <form class="form-group css-form" role="form3">
+          <input id="hairId" type="checkbox" name="hairStylist" ng-model = "hairStylist" ng-click = "skillStyClick(1)">
+          <label for="hairId" class="control control--checkbox"><h3 style="font-size: 28px; margin-top: -35px; letter-spacing: 1px; line-height: 1; text-align: center;">Hair Stylist</h3></label>
+
+
+          <div ng-show="styClicked">
+            <div class = "row" style="margin-left:35px; ">
+              <label ><h4>Fix Your Price :- $</h4></label>
+              <input style="margin-left:10px;" type="number" min="0" max="100000" id="hairPrice" ng-model = "hairPrice" name="hairPrice" placeholder="Price" required autofocus>
+            </div>
+
+            <span ng-repeat="skill in selectSkills">
+              <div class = "row" style="margin-left:35px; ">
+                <input type="checkbox" id="hair{{skill.id}}" ng-model="hairSelectedList[skill.id]"/>
+                <label class="control control--checkbox" for="hair{{skill.id}}">{{skill.skillName}}</label>
+              </div>
+            </span>
+
+          </div>
+        </form>
+      </div>
+
+
+      <div class ="col-md-4">
+        <form class="form-group css-form" role="form3">
+          <input id="appId" type="checkbox" name="apprentice" value="apprentice" ng-model = "apprentice" ng-click = "skillAppClick(1)">
+          <label for="appId" class="control control--checkbox"><h3 style="font-size: 28px; margin-top: -35px; letter-spacing: 1px; line-height: 1; text-align: center;">Apprentice</h3></label>
+
+          <div ng-show="appClicked">
+            <div class = "row" style="margin-left:35px; ">
+              <label ><h4>Fix Your Price :- $</h4></label>
+              <input style="margin-left:10px;" type="number" min="0" max="100000" id="appPrice" ng-model = "appPrice" name="appPrice" placeholder="Price" required autofocus>
+            </div>
+
+            <span ng-repeat="skill in selectSkills">
+              <div class = "row" style="margin-left:35px; ">
+                <input type="checkbox" id="app{{skill.id}}" ng-model="appSelectedList[skill.id]"/>
+                <label class="control control--checkbox" for="app{{skill.id}}">{{skill.skillName}}</label>
+              </div>
+            </span>
+
+          </div>
+        </form>
+      </div>
+
+      <!-- <pre>
+      {{eduSelectedList}}
+      {{hairSelectedList}}
+      {{appSelectedList}}
+    </pre> -->
+
+
+  </div>
+</div>
+</div>

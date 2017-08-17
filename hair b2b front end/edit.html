@@ -1,0 +1,182 @@
+<div class="row" ng-controller="signupController">
+	<div>
+		<form name= "editform" class="form-horizontal css-form" role="form1">
+			<center><h2>Edit Form</h2></center>
+			<div class="form-group">
+				<label for="firstName" class="col-sm-3 control-label">First Name*</label>
+				<div class="col-sm-6">
+					<input type="text" id="firstName" placeholder="Enter your First Name" name="firstname" class="form-control" ng-model="firstname" name ="firstname" required autofocus>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label"></label>
+				<div class="col-sm-6">
+					<div ng-show="form.$submitted || signupform.firstname.$touched">
+						<span style="color:red;" ng-show="signupform.firstname.$error.required">Type your First Name</span>
+						<span style="color:red;" ng-show="signupform.firstname.$error.email">Your First Name is not valid</span>
+						<span style="color:red;" class="error" ng-show="signupform.firstname.$error.pattern"> Invalid Name </span>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="firstName" class="col-sm-3 control-label">Last Name*</label>
+				<div class="col-sm-6">
+					<input type="text" id="lastName" placeholder="Enter Your Last Name" name="lastname" class="form-control" ng-model="lastname" name="lastname" required autofocus>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label"></label>
+				<div class="col-sm-6">
+					<div ng-show="form.$submitted || signupform.lastname.$touched">
+						<span style="color:red;" ng-show="signupform.lastname.$error.required">Type your Last Name</span>
+						<span style="color:red;" ng-show="signupform.lastname.$error.email">Your Last Name is not valid</span>
+						<span style="color:red;" class="error" ng-show="signupform.firstname.$error.pattern"> Invalid Name </span>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="age" class="col-sm-3 control-label">Age*</label>
+				<div class="col-sm-6">
+					<input type="number" min="0" max="99" id="age" placeholder="Enter Your Age" class="form-control" name="age" ng-model="age" name="age" required autofocus>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label"></label>
+				<div class="col-sm-6">
+					<div ng-show="form.$submitted || signupform.age.$touched">
+						<span style="color:red;" ng-show="signupform.age.$error.required">Type your Age</span>
+						<span style="color:red;" ng-show="signupform.age.$error.email">Your Age is not valid</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="location" class="col-sm-3 control-label">Location</label>
+				<div class="col-sm-6">
+					<select id="location" class="form-control" ng-model = "location" required>
+						<option>Afghanistan</option>
+						<option>Bahamas</option>
+						<option>Cambodia</option>
+						<option>Denmark</option>
+						<option>Ecuador</option>
+						<option>Fiji</option>
+						<option>Gabon</option>
+						<option>Haiti</option>
+					</select>
+				</div>
+			</div> <!-- /.form-group -->
+
+			<div class="form-group">
+				<label class="control-label col-sm-3">Gender*</label>
+				<div class="col-sm-6">
+					<div class="row">
+						<div class="col-sm-3">
+							<label class="radio-inline">
+								<input type="radio" id="femaleRadio" name="sex" ng-model="sex"  value="Female">Female
+							</label>
+						</div>
+						<div class="col-sm-3">
+							<label class="radio-inline">
+								<input type="radio" id="maleRadio" name="sex" ng-model="sex" value="Male">Male
+							</label>
+						</div>
+						<div class="col-sm-3">
+							<label class="radio-inline">
+								<input type="radio" id="otherRadio" name="sex" ng-model="sex" value="Other">Other
+							</label>
+						</div>
+					</div>
+				</div>
+			</div> <!-- /.form-group -->
+
+			<div class="form-group">
+				<label for="email" class="col-sm-3 control-label">Email*</label>
+				<div class="col-sm-6">
+					<input type="email" id="email" placeholder="Email" ng-model="email" class="form-control" name="email" required>
+				</div>
+				<br>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label"></label>
+				<div class="col-sm-6">
+					<div ng-show="form.$submitted || signupform.email.$touched">
+						<span style="color:red;" ng-show="signupform.email.$error.required">Type your email</span>
+						<span style="color:red;" ng-show="signupform.email.$error.email">Email is not valid</span>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label class="control-label col-sm-3">User Type*</label>
+				<div class="col-sm-6">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="salon" ng-click = "save(0)" ng-model="salon" value="salon" checked="checked">Salon
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="stylist" ng-click = "save(1)" ng-model="stylist" value="stylist">Stylist
+						</label>
+					</div>
+				</div>
+			</div> <!-- /.form-group -->
+
+			<div class="form-group" ng-show="stylistShow==true">
+				<label for="description" class="col-sm-3 control-label">Description</label>
+
+				<div class="col-sm-6">
+					<textarea rows="3" cols="78" ng-model="description">
+
+					</textarea>
+				</div>
+			</div>
+
+			<div class="form-group" ng-show="stylistShow==true">
+				<label for="conditions" class="col-sm-3 control-label">Conditions</label>
+				<div class="col-sm-6">
+					<textarea rows="3" cols="78" ng-model="condition">
+
+					</textarea>
+				</div>
+			</div>
+
+			<div class="form-group" ng-show= "salonShow==true">
+				<label for="salonName" class="col-sm-3 control-label">Salon Name*</label>
+				<div class="col-sm-6">
+					<input type="text" id = "salonName" placeholder="Enter Your Salon Name" ng-model="salonName" name="salonName" class="form-control" autofocus>
+				</div>
+			</div>
+
+			<div class="form-group" ng-show= "salonShow==true">
+				<label class="col-sm-3 control-label"></label>
+				<div class="col-sm-6">
+					<div ng-show="form.$submitted || signupform.salonName.$touched">
+						<span style="color:red;" ng-show="signupform.salonName.$error.required">Type your Salon Name</span>
+						<span style="color:red;" ng-show="signupform.salonName.$error.email">Your Salon Name is not valid</span>
+						<span style="color:red;" class="error" ng-show="$invalid">.salonName.$error.pattern"> Invalid Salon Name </span>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="form-group" >
+				<div class="col-sm-6 col-sm-offset-3 container">
+					<button type="submit"  toggleModal('Success')" ng-model="button" ng-disabled="((stylistShow==true||salonShow==true)&&(accepted==true))==false; signupform.$invalid" class="btn btn-primary btn-block">Save</button>
+					<modal visible="showModal">
+						Changes Saved !
+					</modal>
+				</div>
+			</div>
+		</form> <!-- /form -->
+
+	</div>
+</div>

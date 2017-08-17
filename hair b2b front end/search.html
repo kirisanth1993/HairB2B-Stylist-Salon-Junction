@@ -1,0 +1,112 @@
+<div class="row">
+	<div>
+		<form name= "searchform" class="form-horizontal css-form" role="searchForm1">
+			<div>
+				<h1><center>Search here</center></h1>
+			</div>
+
+			<div >
+				<div class="input-group" style="width:900px; padding-left:80px;">
+					<input style="font-size:18px; font-family:serif" ng-model="name" type="text" class="form-control" placeholder = "Search with Stylist name">
+					<span class="input-group-btn">
+						<button  class="btn btn-default btn-success" ng-click = "search()" type="submit">Go!</button>
+					</span>
+				</div>
+				<br>
+
+				<div>
+	      	<input style = "margin-left:80px" type="checkbox" name="filter" value = "filter" ng-model = "filter" ng-click = "filterClick(1);" >
+	        <label style = "margin-left:15px" class="control control--checkbox"><h4 style="font-size: 23px;letter-spacing: 1px;line-height: 1; text-align: center;"><b>Filtered search</b></h4></label>
+				</div>
+
+				<div ng-show = "filterClicked">
+					<hr style="height:1px;color:#333;background-color:#333;" />
+					<form class="form-group css-form" style = "background-color:black" role="searchForm2">
+						<div style="margin-left:115px" >
+							<div class="col-md-4">
+								<input type="checkbox" name="educator" value = "educator" ng-model = "educator" ng-click = "eduClick(1);" >
+								<label class="control control--checkbox">Educator</label>
+							</div>
+
+							<div class="col-md-4">
+								<input type="checkbox" name="hairStylist" value = "hairStylist" ng-model = "hairStylist" ng-click = "hairClick(1);" >
+								<label class="control control--checkbox">Hair Stylist</label>
+							</div>
+
+							<div class="col-md-4">
+								<input type="checkbox" name="apprentice" value = "apprentice" ng-model = "apprentice" ng-click = "appClick(1);" >
+								<label class="control control--checkbox">Apprentices</label>
+							</div>
+						</div>
+						<br>
+						<br>
+
+						<div class="form-group" >
+							<label style="margin-left:-55px" for="minPrice" class="control-label col-md-4">Minimum price</label>
+							<input style="margin-left: 95px" class="col-md-2" type="number" min="0" max="10000" id="minPrice" ng-model = "minPrice" name="minPrice" placeholder = "Min price"  autofocus>
+						</div>
+
+						<div class="form-group" >
+							<label  for="maxPrice" style="margin-left:-55px" class="control-label col-md-4">Maximum price</label>
+							<input  class="col-md-2" style="margin-left:95px" type="number" min="0" max="10000" id="maxPrice" ng-model = "maxPrice" name="maxPrice" placeholder = "Max price"  autofocus>
+						</div>
+
+						<br>
+
+						<div class= "form-group">
+							<label class="control-label col-md-3" style="margin-left:30px">Starting Day</label>
+							<input class="control-label col-md-3" style="margin-left:65px; width:200px;" type="date" name="startingDay">
+							<label class="control-label col-md-3" style="margin-left:-30px;">Finishing Day</label>
+							<input class="control-label col-md-3" style="width:200px;" type="date" name="finishingDay">
+						</div>
+
+					</form>
+					<hr style="height:1px;color:#333;background-color:#333;" />
+				</div>
+
+				<div ng-if="result==false" class="form-group">
+					<label for="firstName" class="col-md-3 col-md-offset-1 control-label" style="color:red"><h2>No results Found!</h2></label>
+				</div>
+
+				<div ng-if="result" ng-repeat = "stylistsObj in usersList" class="form-group">
+					<label class="col-md-3 col-md-offset-1 control-label"><img alt="User Pic" src="../images.jpg" class="img-responsive"></label>
+					<div class="col-sm-8 col-md-8 col-lg-8 ">
+						<div class ="row">
+							<label class="col-sm-3 control-label">Firstname</label>
+							<label class="col-sm-5 control-label">{{stylistsObj.firstName}}</label>
+						</div>
+
+						<div class ="row">
+							<label class="col-sm-3 control-label">Lastname</label>
+							<label class="col-sm-5 control-label">{{stylistsObj.lastName}}</label>
+						</div>
+
+						<div class ="row">
+							<label class="col-sm-3 control-label">Email</label>
+							<label class="col-sm-5 control-label">{{stylistsObj.email}}</label>
+						</div>
+
+						<div class ="row">
+							<label class="col-sm-3 control-label">Location</label>
+							<label class="col-sm-5 control-label">{{stylistsObj.location}}</label>
+						</div>
+						<br>
+						<div class ="row">
+							<div class="col-md-3 col-md-offset-2 container">
+								<a type="submit" href= "#!stylistProfile/{{stylistsObj.id}}" ng-model="button" class="btn btn-primary btn-block" > View profile</a>
+							</div>
+							<div class="col-md-3 container">
+								<a type="submit" href= "#!booking/{{stylistsObj.id}}" ng-model="button" class="btn btn-primary btn-block">Book</a>
+							</div>
+
+						</div>
+						<hr style="height:1px;color:#333;background-color:#333;" />
+					</div>
+				</div>
+
+				<br>
+
+			</div>
+		</form>
+	</div>
+</div>

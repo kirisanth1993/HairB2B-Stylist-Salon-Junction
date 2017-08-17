@@ -1,0 +1,119 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad" >
+    <div class = "panel panel-info">
+      <div class="panel-heading">
+        <h3 id  class="panel-title">Booking</h3>
+      </div>
+
+      <div class="panel-body">
+        <ul class="nav nav-tabs">
+          <li role="presentation"><a href="#!stylistProfile/{{styId}}">Profile</a></li>
+          <li role="presentation"><a>Calendar</a></li>
+          <li role="presentation" class="active"><a>Booking</a></li>
+        </ul>
+
+        <div class="row" >
+        	<form name= "bookingform" style="background-color:#D3D3D3	; font-family:serif; " class="form-horizontal css-form" role="bookingForm">
+            <br>
+
+            <div class="form-group">
+              <label class="col-md-2 col-md-offset-2"><b>From</b></label>
+        			<div class="col-md-4">
+                <input class="control-label" type="date" name="from" ng-model="from">
+        			</div>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <label class="col-md-2 col-md-offset-2"><b>Until</b></label>
+        			<div class="col-md-4">
+                <input class="control-label" type="date" name="until" ng-model="until">
+        			</div>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <label class="col-md-2 col-md-offset-2"><b>Job type</b></label>
+        			<div class="col-md-4">
+                <label class="radio-inline">
+  								<input type="radio" name="job" ng-model="job"  value="educator"><p style="font-family:serif; font-size:20px;" checked><b>Educator</b></p>
+  							</label>
+                <br>
+
+                <label class="radio-inline">
+  								<input type="radio" name="job" ng-model="job" value="hair stylist"><p style="font-family:serif; font-size:20px;"><b>Hair Stylist</b></p>
+  							</label>
+
+                <br>
+                <label class="radio-inline">
+  								<input type="radio" name="job" ng-model="job" value="apprentice"><p style="font-family:serif; font-size:20px;"><b>Apprentice</b></p>
+  							</label>
+        			</div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 col-md-offset-2"><b>Location</b></label>
+        			<div class="col-md-3">
+                <select style="color:black; font:serif; font-size:18px" id="location" class="form-control" name="location" ng-model = "location">
+      						<option>Adelaide</option>
+      						<option>Brisbane</option>
+      						<option>Drawin</option>
+      						<option>Geelong</option>
+      						<option>Hobard</option>
+      						<option>Melbourne</option>
+      						<option>Perth</option>
+      						<option>Sydney</option>
+      						<option>Wollongong</option>
+      					</select>
+        			</div>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <label class="col-md-2 col-md-offset-2"><b>Description</b></label>
+        			<div class="col-md-3">
+                <textarea class = "form-control" style="font-family:serif; font-size:18px" ng-model="description">
+      					</textarea>
+        			</div>
+            </div>
+            <br>
+
+
+            <div ng-if = "dayDiff" style="font-family:serif;">
+            <div class="form-group">
+              <label style="font-family:Comic Sans MS " class="col-md-2 col-md-offset-2"><h2><b>Cost</b></h2></label>
+              <label class="col-md-4" style="font-family:Comic Sans MS"><h2><b>{{dayDiff}} Days  X  {{dayPrice}} $ </b></h2></label>
+              <label style="color:#A52A2A;" class="col-md-2"><h1><b>{{dayDiff*dayPrice}} $</b></h1></label>
+            </div>
+
+            <div class="form-group">
+              <label style="font-family:Comic Sans MS" class="col-md-2 col-md-offset-2"><h2><b>Service charge</b></h2></label>
+              <label class="col-md-4" style="font-family:Comic Sans MS"><h2><b>10% * {{dayDiff*dayPrice}} $</b></h2></label>
+              <label style="color:#A52A2A;"  class="col-md-2"><h1><b>{{dayDiff*dayPrice*10/100}} $</b></h1></label>
+            </div>
+
+            <div class="form-group">
+              <label style="font-family:Comic Sans MS;" class="col-md-2 col-md-offset-2"><h2><b>Tax</b></h2></label>
+              <label class="col-md-4" style="font-family:Comic Sans MS"><h2><b>&#160 5% * {{dayDiff*dayPrice}} $</b></h2></label>
+              <label style="color:#A52A2A;" class="col-md-2 "><h1><b>{{dayDiff*dayPrice*5/100}} $</b></h1></label>
+            </div>
+
+            <div class="form-group">
+              <label style="font-family:Comic Sans MS" class="col-md-2 col-md-offset-2"><h2><b>Net cost</b></h2></label>
+              <label class="col-md-4" style="font-family:Comic Sans MS"><h2><b>{{dayDiff*dayPrice}} $ + {{dayDiff*dayPrice*5/100}} $ + {{dayDiff*dayPrice*115/100}} $</b></h2></label>
+              <label style="color:#A52A2A;" class="col-md-2" ><h1><b>{{dayDiff*dayPrice*115/100}} $</b></h1></label>
+            </div>
+          </div>
+
+            <div class="form-group">
+        			<div class="col-md-2 col-md-offset-4">
+                <button type="submit" id="register" ng-click="book()" ng-model="button" ng-disabled="(bookingform.$invalid||!token)" class="btn btn-primary btn-block">Book</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
